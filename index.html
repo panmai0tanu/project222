@@ -29,7 +29,7 @@
             <div class="container">
                 <div class="site-header">
                     <div class="logo">
-                        <h1>Sitename</h1>
+                        <h1>Project Dental Clinic</h1>
                     </div>
                     <div class="menu">
                         <div class="navbar">
@@ -69,16 +69,22 @@
                         <div class="carousel-inner">
                             <div class="item">
                                 <img src="img/smile_032.jpg" alt="" class="bw">
-                                
+                                <div class="carousel-caption">
+                                  <h1>New Promotion - ลด 50%</h1>
+                                 
+                                </div>
                             </div>
                             <div class="item">
                                 <img src="img/smile4.jpeg" alt="" class="bw">
-                                
+                                <div class="carousel-caption">
+                                  <h1>ดูแลฟันของตัวเองให้ดี</h1>
+                                 
+                                </div>
                             </div>
                             <div class="item active">
                                 <img src="img/smile82.jpeg" alt="" class="bw">
                                 <div class="carousel-caption">
-                                  <h1>welcome to my dental clinic</h1>
+                                  <h1>welcome to Project dental clinic</h1>
                                  
                                 </div>
                             </div>
@@ -103,9 +109,22 @@
                         <div class="span5">
                             <div class="block-content">
                                 <h3>รายละเอียดคลีนิค</h3>
-                                <p>vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus.
-                                </p>
-                                <p class="last">Suspendisse mauris. Fusce accumsan mollis eros. Pellentesque a diam sit amet mi ullamcorper vehicula. Integeralesuada.</p>
+                                
+<h5>
+                    คลินิกทันตกรรม มีทีมทันตแพทย์ที่มีประสบการณ์และความเชี่ยวชาญระดับสูงในด้าน
+                    ทันตกรรมทุกสาขา <br>อาทิเช่น การจัดฟัน ศัลยกรรมช่องปาก/ผ่าฟันคุด ฟอกสีฟัน รากฟันเทียม รักษารากฟัน รักษาโรคเหงือก ครอบฟัน สะพานฟัน และการทำฟันปลอม เป็นต้น ​<br><br>
+​
+​                    คลินิกทันตกรรม​ของเราคิดค่าบริการรักษาทันตกรรมในราคาที่เป็นกันเองและให้ความสำคัญกับระบบการฆ่าเชื้อ (Sterilization)<br>อาทิเช่นย่างดีในขั้นสูงสุด คนไ​ข้สามารถที่จะมั่นใจได้ว่าทุกครั้งที่มารักษาทันตกรรมกับเราจะได้รับบริการที่ดีจากการปลอดเชื้อสะอาดและปลอดภัยขั้นสูงสุด
+​<br><br>
+                    ทีมงานและทันตแพทย์ของเรายินดีให้บริการและพร้อมที่จะดูแลสุขภาพฟันของทุกท่านให้เป็นอย่างดีที่สุด
+​                       </h5>
+<br>
+
+                                
+                                <p class="last">ติดต่อ<br>
+                                Line ID : @ProjectClinic<br>
+                                Tel : 053-444-888<br>
+                                Facebook Page : Peoject Dental Clinic<br></p>
                             </div>
                         </div>
                     </div>
@@ -113,11 +132,17 @@
             </div>
             <div class="container">
                 <div class="featured-heading">
-                    <h1>login เข้าดูข้อมูลผู้ป่วย</h1>
+                    <h1>For User</h1>
                     
-                    <form class="form-horizontal input-append" action="php/login.php">
-                        <input class="span3" type="text" placeholder="prease enter your id">cresent sbsum
-                        <input type="submit" class="btn">login</button>
+                    <!--form class="form-horizontal input-append" id="fromlogin" name="fromlogin">
+                        <input id="id-user" class="span3" type="text" placeholder="prease enter your id">cresent sbsum
+                        <input type="submit" class="btn" onclick="validateForm()">login</button>
+                    </form-->
+                    <form class="form-horizontal input-append" id="fromlogin" name="fromlogin" method="post" action="user-view.html">
+                        <input class="span3" id="id" type="text" placeholder="prease input your id" border="1px" >
+                        <input type="submit" class="btn" onclick="validateForm()">login</input>
+                        
+                       	
                     </form>
                 </div>
             </div>
@@ -135,6 +160,24 @@
 $('#myCarousel').carousel({
     interval: 1800
 });
+</script>
+<script>
+		function validateForm() {
+			//var x = document.getElementById("id");
+			//if (x == "555"){
+			if ((document.getElementById("id").value == "580510613"))
+				{
+					document.getElementById("fromlogin").action = "user-view.html";
+				}
+			else
+				{
+					document.getElementById("fromlogin").action = "index.html";
+					alert("ไม่พบข้อมูล")
+				}
+			//}
+			
+			
+		}
 </script>
 
     </body>
