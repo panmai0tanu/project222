@@ -1,9 +1,4 @@
 
-
-
-
-
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -120,8 +115,10 @@
                      <table>
   <tr>
     <th>รหัสอุปกรณ์</th>
-    <th>เครื่องมือและยา</th>
+    <th>ชื่อ</th>
     <th>คงเหลือ</th>
+    <th>ราคา</th>
+    <th>วันหมดอายุ</th>
     <th>เพิ่ม</th>
     <th>ลด</th>
 
@@ -130,19 +127,63 @@
   </tr>
 
 <?php
+
  while($objResult = $objQuery->fetch_assoc()){
+
+        $id1 = $objResult["id"];
+        $name1 = $objResult["name"]; 
+        $number1 = $objResult["number1"];
+        $price = $objResult["price"];
+        $expire = $objResult["expire"];
 ?>
         <tr>
-            <td><?php echo $objResult["id"]; ?></td>
-            <td><?php echo $objResult["name"]; ?></td>
-            <td><?php echo $objResult["number"]; ?></td>
+            <td><?php echo $id1; ?></td>
+            <td><?php echo $name1; ?></td>
+            <td><?php echo $number1; ?></td>
+            <td><?php echo $price; ?></td>
+            <td><?php echo $expire; ?></td>
             <td>
-                <form action="sss.php" method="get">
-                    <input type="text" name="text_plain" style="background-color: gray" size="5"  onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"/>
-                    <input type="submit"></input> 
+                <form action="../update2.php" method="get">
+                    <?php $id2 = $objResult["id"];
+                    $name2 = $objResult["name"]; 
+                    $number2 = $objResult["number1"];?>
+                    <input type="hidden" name="id2" id="id2" value="<?php echo "$id2"?>" /> 
+                    <input type="text" name="newnumber" style="background-color: gray"   onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"/>
+                    <!--button onclick="myFunction()">เพิ่ม</button-->
+                    <button type="submit" id="submit" class="button button-rounded button-flat" >เพิ่ม</button>
+                   
+                    
+                </form>
+                
+
+                    <!---?php $sql5 = "UPDATE medicine SET number1=$newnumber WHERE id=$id1";
+                        if ($conn->query($sql5) === TRUE) {
+                             //echo "Java Script" ;// Echo Java Script ของเราไปเลยครับ เช่น
+                           echo"<script language = 'javascript'>";
+                           echo"alert('This is Alert Text')";
+                           echo"</script>";
+                        } else {
+                            echo "Error updating record: " . $conn->error;
+                        }
+                    ?-->
+
+                </form>
+                
+                
+            </td>
+            <td>
+                <form action="../update2.php" method="get">
+                    <?php $id2 = $objResult["id"];
+                    $name2 = $objResult["name"]; 
+                    $number2 = $objResult["number1"];?>
+                    <input type="hidden" name="id2" id="id2" value="<?php echo "$id2"?>" /> 
+                    <input type="text" name="newnumber" style="background-color: gray"   onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"/>
+                    <!--button onclick="myFunction()">เพิ่ม</button-->
+                    <button type="submit" id="submit" class="button button-rounded button-flat" >ลบ</button>
+                   
+                    
                 </form>
             </td>
-            <td><input type="text" name="text_plain" style="background-color: gray" col=5 onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลข'); this.value='';}"/></td>
         </tr>
 <?php
 }
@@ -156,7 +197,7 @@
     ?>       
 
                     <br>
-                    <a href="imformation.html" class="button button-rounded button-flat" >Back</a>
+                    <a href="../imformation.html" class="button button-rounded button-flat" >Back</a>
 
 
                     <hr >
@@ -173,6 +214,25 @@
             </div>
             
 
+    <script>
+        function myFunction(number1){
+            
+            /*if (number1 == 1){
+                alert("sss");
+            }else{
+                alert("xx");
+            }*/
+            //document.getElementById("fromlogin").action = "update.php";
+        }
+        function testfunction(){
+            alert("ok");
+        }
+   </script>
+
+    <script>
+        
+    </script>
+    
 
     </body>
 </html>

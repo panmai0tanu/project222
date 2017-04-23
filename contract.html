@@ -104,7 +104,22 @@
                     </div>
                     <div class="span5">
                         <h1>Contact</h1>
-                        <img src="img/img6.png" class="spacing-t spacing-b" alt="">
+                        <div id="map" style="width:400px;height:400px;background:yellow"></div>
+
+                        <script>
+                        function myMap() {
+                        var mapOptions = {
+                        center: new google.maps.LatLng(51.5, -0.12),
+                        zoom: 10,
+                        mapTypeId: google.maps.MapTypeId.HYBRID
+                        }
+                        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+                        }
+                        </script>
+
+                        <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+
                         <div class="site-address">
                             <strong>Address</strong><br>
                             <span>99/9 Chiangmai Road , Ban Kat , Mae Wang , Chiang Mai 50360</span>
