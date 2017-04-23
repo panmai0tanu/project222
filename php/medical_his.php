@@ -87,9 +87,6 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
     settype($how, "string");
     settype($medicine, "string");
 
-    if($fname == NULL){
-        echo "null"."<br>";
-    }
     
     if (strlen($id) == 9){
         if ($fname != NULL){
